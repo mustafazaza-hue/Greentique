@@ -1,0 +1,73 @@
+@import "tailwindcss";
+/* @import "~react-image-gallery/styles/css/image-gallery.css"; */
+
+@theme {
+  --bg-color-dark:#1A1A19;
+  --bg-color-light:#F6FCDF;
+  --color-text-light:#1A1A19;
+  --color-text-dark:#F6FCDF;
+  --color-btn-dark:#347928;
+  --color-btn-darker:#28611e;
+  --color-btn-light:#859F3D;
+
+
+  --animate-slide-in:slide-in ease-in-out 200ms;
+
+
+
+  @keyframes slide-in {
+    from {
+      transform:translatex(-100%)
+    }
+    to{
+      transform:translatex(0)
+    }
+  }
+}
+
+@layer base {
+  body {
+  font-family: 'Poppins', sans-serif;
+}
+
+span , a {
+  @apply inline-block;
+}
+
+button , a {
+  @apply cursor-pointer
+}
+}
+@utility container{
+  @apply mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+
+@layer components {
+  .form-control {
+    @apply  border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-btn-dark)];
+  }
+  .btn {
+    @apply py-2 px-4 rounded-lg bg-[var(--color-btn-dark)] hover:bg-[var(--color-btn-darker)] text-[var(--color-text-dark)] font-semibold transition-colors duration-200;
+  }
+}
+.swiper-button-prev, 
+.swiper-button-next{
+  @apply size-12! rounded-full bg-[var(--color-btn-darker)]/50 after:text-lg! after:text-white
+}
+.swiper-pagination-bullet-active{
+  @apply bg-white!
+}
+.active-tab {
+  color: #16a34a;
+}
+
+.active-tab::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #16a34a;
+}
